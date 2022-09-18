@@ -8,6 +8,9 @@ import time
 import tensorflow as tf
 import tensorflow.keras.utils as utils
 
+FRUIT_IMAGE_SIZE = (100, 100)
+FRUIT_INPUT_SHAPE = (100, 100, 3)
+
 print('[INFO] Loading training data set:')
 train = utils.image_dataset_from_directory(
     'fruits-360_dataset/fruits-360/Training',
@@ -15,7 +18,7 @@ train = utils.image_dataset_from_directory(
     label_mode = 'categorical',
     color_mode = 'rgb',
     batch_size = 32,
-    image_size = (100, 100),
+    image_size = FRUIT_IMAGE_SIZE,
     shuffle = True, 
     seed = 8008,
 )
@@ -27,7 +30,7 @@ test = utils.image_dataset_from_directory(
     label_mode = 'categorical',
     color_mode = 'rgb',
     batch_size = 32,
-    image_size = (100, 100),
+    image_size = FRUIT_IMAGE_SIZE,
     shuffle = True,
     seed = 8008,
 )
