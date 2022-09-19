@@ -15,6 +15,9 @@ import tensorflow.keras.losses as losses
 FRUIT_IMAGE_SIZE = (100, 100)
 FRUIT_INPUT_SHAPE = (100, 100, 3)
 
+print("\n" * 5)
+print(f"Day and time: {time.strftime('%j %H %M %S', time.localtime())}")
+
 print('[INFO] Loading training data set:')
 train = utils.image_dataset_from_directory(
     'fruits-360_dataset/fruits-360/Training',
@@ -87,3 +90,5 @@ results = net.model.fit(
     validation_batch_size = 32, 
     verbose = 1
 )
+
+print(f"Day and time: {time.strftime('%j %H %M %S', time.localtime())}")
